@@ -1,0 +1,36 @@
+table, td
+{
+    border-collapse: collapse;
+    font-family: monospace;
+    font-size: 1.25em;
+}
+
+.rotated-left-90
+{
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    transform: rotate(-90.00deg);
+    margin-left: 0em;
+    margin-right: 0em;
+}
+
+.calendar-year
+{
+    font-size: 1.5em;
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+.calendar-year-odd
+{
+    background-color: gray;
+}
+
+.calendar-month
+{
+    color: black;
+    background-color: white;
+    padding: 4px;                
+}
