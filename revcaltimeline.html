@@ -2,139 +2,17 @@
 <html>
     <head>
         <title>Test for Creating Calendars for Time Line Pane</title>
-        <style>
-            table, td
-            {
-                border-collapse: collapse;
-                font-family: monospace;
-                font-size: 1.25em;
-                text-transform: uppercase;
-            }
 
-            .rotated-left-90
-            {
-                text-align: center;
-                white-space; nowrap;
-                vertical-align; middle;
-                transform: rotate(-90.00deg);
-                margin-left: 0em;
-                margin-right: 0em;
-            }
+        <link rel="stylesheet" type="text/css" href="revcaltimeline.css" />
 
-            .calendar-year
-            {
-                font-size: 1.5em;
-                color: white;
-                background-color: black;
-                text-align: center;
-            }
-
-            .calendar-month
-            {
-                color: black;
-                background-color: white;
-                padding: 4px;                
-            }
-        </style>
+        <script src="revcaltimeline.js"></script>
     </head>
     <body>
-        <script>
-            function createElement(elementType)
-            {
-                return document.createElement(elementType);
-            }
-
-            function monthName(jsMonth)
-            {
-                return ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][jsMonth];
-            }
-
-            function generateYearTableId(year)
-            {
-                return "Y" + year;
-            }
-
-            function createYearTable(year)
-            {
-                var rows = 3;
-                var columns = 5;
-
-                var table = createElement("table");
-
-                var yearId = generateYearTableId(year);
-                table.id = yearId;
-
-                var row;
-                var column;
-
-                for (row = 0; row < rows; row++)
-                {
-                    var tr = createElement("tr");
-
-                    for (column = 0; column < columns; column++)
-                    {
-                        var td = createElement("td");
-
-                        if (column == 0)
-                        {
-                            if (row == 0)
-                            {
-                                td.setAttribute("rowspan", rows);
-                                td.className = "calendar-year";
-
-                                var spanning = createElement("div");
-                                spanning.className = "rotated-left-90";
-                                spanning.innerText = year;
-                                td.appendChild(spanning);
-
-                                tr.appendChild(td);
-                            }
-                        }
-                        else
-                        {
-                            var month = 12 - (row * (columns - 1) + column - 1);
-                            var monthId = "M" + month;
-
-                            td.id = yearId + monthId;
-                            td.innerText = monthName(month - 1).substr(0, 3);
-                            td.className = "calendar-month";
-
-                            tr.appendChild(td);
-                        }
-
-                        <!-- TODO: Attach an ID for the Y/M. -->
-                        <!-- TODO: Set the innerHTML/innerText to the first letter of the month. -->
-                    }
-
-                    table.appendChild(tr);
-                }
-
-                return table;
-            }
-
-            function addYearIfMissing(year)
-            {
-                var yearId = generateYearTableId(year);
-
-                var yearTable = document.getElementById(yearId);
-
-                if (!yearTable)
-                {
-                    document.body.appendChild(createYearTable(year));
-                }
-            }
-
-            function onClick_AddYear()
-            {
-                var starting = 2006;
-                var latest = new Date().getFullYear();
-
-                for (var current = latest; starting <= current; current--)
-                {
-                    addYearIfMissing(current);
-                }
-            }
-        </script>
-        <button type="button" onclick="onClick_AddYear()">Add Year!</button>
+        <button type="button" onclick="onBuildTimeLineClick()">Build Time Line</button>
+        <div id="container">
+            <div id="timeline"></div>
+            <div id="descriptions"></div>
+            <div id="tags"></div>
+        </div>
     </body>
 </html>
