@@ -1,11 +1,6 @@
-function createElement(elementType)
+function monthNames()
 {
-    return document.createElement(elementType);
-}
-
-function monthName(jsMonth)
-{
-    return ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][jsMonth];
+    return ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 }
 
 function generateYearTableId(year)
@@ -13,15 +8,50 @@ function generateYearTableId(year)
     return "Y" + year;
 }
 
+function yearTableCell(year, rows)
+{
+    var tableCell = createElement("td");
+
+    tableCell.setAttribute("rowspan", rows);
+    tableCell.className = "calendar-year";
+
+    if (year % 2 != 0)
+    {
+        tableCell.className += " calendar-year-odd";
+    }
+
+    var spanning = createElement("div");
+    spanning.className = "rotated-left-90";
+    spanning.innerText = year;
+    tableCell.appendChild(spanning);
+
+    return tableCell;
+}
+
 function generateMonthCellId(year, month)
 {
     return generateYearTableId(year) + "M" + month;
 }
 
-function createYearTable(year)
+function monthTableCell(year, month)
 {
-    var rows = 3;
-    var columns = 5;
+    var tableCell = document.createElement("td");
+
+    tableCell.id = generateMonthCellId(year, month);
+    tableCell.innerText = monthNames()[month - 1].substr(0, 3);
+    tableCell.className = "calendar-month";
+
+    return tableCell;
+}
+
+function createElement(elementType)
+{
+    return document.createElement(elementType);
+}
+
+function createYearTable(year, columns)
+{
+    var rows = 12 / columns;
 
     var table = createElement("table");
 
@@ -35,40 +65,16 @@ function createYearTable(year)
     {
         var tr = createElement("tr");
 
-        for (column = 0; column < columns; column++)
+        if (row == 0)
         {
-            var td = createElement("td");
+            tr.appendChild(yearTableCell(year, rows));
+        }
 
-            if (column == 0)
-            {
-                if (row == 0)
-                {
-                    td.setAttribute("rowspan", rows);
-                    td.className = "calendar-year";
+        for (column = 1; column < columns + 1; column++)
+        {
+            var month = 12 - (row * columns + column - 1);
 
-                    if (year % 2 != 0)
-                    {
-                        td.className += " calendar-year-odd";
-                    }
-
-                    var spanning = createElement("div");
-                    spanning.className = "rotated-left-90";
-                    spanning.innerText = year;
-                    td.appendChild(spanning);
-
-                    tr.appendChild(td);
-                }
-            }
-            else
-            {
-                var month = 12 - (row * (columns - 1) + column - 1);
-
-                td.id = generateMonthCellId(year, month);
-                td.innerText = monthName(month - 1).charAt(0);
-                td.className = "calendar-month";
-
-                tr.appendChild(td);
-            }
+            tr.appendChild(monthTableCell(year, month));
         }
 
         table.appendChild(tr);
@@ -85,7 +91,7 @@ function addYearIfMissing(year)
 
     if (!yearTable)
     {
-        document.getElementById("timeline").appendChild(createYearTable(year));
+        document.getElementById("timeline").appendChild(createYearTable(year, 2));
     }
 }
 
