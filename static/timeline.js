@@ -89,12 +89,12 @@ function addYear(year)
     }
 }
 
-function injectTimelineSince(startingYear)
+function addTimelineStartingFrom(startingYear)
 {
     var latest = new Date().getFullYear();
 
     for (var year = latest; startingYear <= year; year--)
     {
-        addYearIfMissing(year);
+        addYear(year);
     }
 }
