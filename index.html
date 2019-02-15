@@ -9,11 +9,24 @@
     </head>
     <body>
         <div id="container">
-            <div id="timeline">
-                <button type="button" onclick="addTimelineStartingFrom(2006)">Build Time Line</button>
+            <div id="timeline-column" class="column">
+                <div class="button-container">
+                    <div class="button" onclick="addTimelineStartingFrom(2006)">Add Time Line</div>
+                </div>
+                <div id="timeline"></div>
             </div>
-            <div id="descriptions"></div>
-            <div id="tags"></div>
+            <div id="descriptions-column" class="column">
+                <div class="button-container">
+                    <div class="button" onclick="">Add Descriptions</div>
+                </div>
+                <div id="descriptions"></div>
+            </div>
+            <div id="tags-column" class="column">
+                <div class="button-container">
+                    <div class="button" onclick="">Add Tags</div>
+                </div>
+                <div id="tags"></div>
+            </div>
         </div>
     </body>
 </html>
