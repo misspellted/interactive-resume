@@ -1,16 +1,13 @@
-function monthNames()
-{
-    return ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-}
+var MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-function generateYearTableId(year)
+function yearTableId(year)
 {
     return "Y" + year;
 }
 
 function yearTableCell(year, rows)
 {
-    var tableCell = createElement("td");
+    var tableCell = document.createElement("td");
 
     tableCell.setAttribute("rowspan", rows);
     tableCell.className = "calendar-year";
@@ -20,7 +17,7 @@ function yearTableCell(year, rows)
         tableCell.className += " calendar-year-odd";
     }
 
-    var spanning = createElement("div");
+    var spanning = document.createElement("div");
     spanning.className = "rotated-left-90";
     spanning.innerText = year;
     tableCell.appendChild(spanning);
@@ -28,34 +25,29 @@ function yearTableCell(year, rows)
     return tableCell;
 }
 
-function generateMonthCellId(year, month)
+function monthCellId(year, month)
 {
-    return generateYearTableId(year) + "M" + month;
+    return yearTableId(year) + "M" + month;
 }
 
 function monthTableCell(year, month)
 {
     var tableCell = document.createElement("td");
 
-    tableCell.id = generateMonthCellId(year, month);
-    tableCell.innerText = monthNames()[month - 1].substr(0, 3);
+    tableCell.id = monthCellId(year, month);
+    tableCell.innerText = MONTH_NAMES[month - 1].substr(0, 3);
     tableCell.className = "calendar-month";
 
     return tableCell;
-}
-
-function createElement(elementType)
-{
-    return document.createElement(elementType);
 }
 
 function createYearTable(year, columns)
 {
     var rows = 12 / columns;
 
-    var table = createElement("table");
+    var table = document.createElement("table");
 
-    var yearId = generateYearTableId(year);
+    var yearId = yearTableId(year);
     table.id = yearId;
 
     var row;
@@ -63,7 +55,7 @@ function createYearTable(year, columns)
 
     for (row = 0; row < rows; row++)
     {
-        var tr = createElement("tr");
+        var tr = document.createElement("tr");
 
         if (row == 0)
         {
@@ -83,25 +75,26 @@ function createYearTable(year, columns)
     return table;
 }
 
-function addYearIfMissing(year)
+function addYear(year)
 {
-    var yearId = generateYearTableId(year);
+    // Check to see if a year table already exists for the year.
+    var yearId = yearTableId(year);
 
     var yearTable = document.getElementById(yearId);
 
+    // If it doesn't exist, then add it.
     if (!yearTable)
     {
         document.getElementById("timeline").appendChild(createYearTable(year, 2));
     }
 }
 
-function onBuildTimeLineClick()
+function addTimelineStartingFrom(startingYear)
 {
-    var starting = 2006;
     var latest = new Date().getFullYear();
 
-    for (var current = latest; starting <= current; current--)
+    for (var year = latest; startingYear <= year; year--)
     {
-        addYearIfMissing(current);
+        addYear(year);
     }
 }
