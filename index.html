@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8" />
         <title>Interactive Resume</title>
 
         <link rel="stylesheet" type="text/css" href="static/page.css" />
 
         <script src="static/timeline.js"></script>
+        <script src="static/code/descriptions.js"></script>
     </head>
-    <body>
+    <body onload="loadDescriptions()">
         <div id="container">
             <div id="timeline-column" class="column">
                 <div class="button-container">
@@ -19,7 +21,12 @@
                 <div class="button-container">
                     <div class="button" onclick="">Add Descriptions</div>
                 </div>
-                <div id="descriptions"></div>
+                <div id="descriptions">
+                    <h2>Positions</h2>
+                    <ul id="professional"></ul>
+                    <h2>Studies</h2>
+                    <ul id="academic"></ul>
+                </div>
             </div>
             <div id="tags-column" class="column">
                 <div class="button-container">
