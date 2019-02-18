@@ -6,10 +6,13 @@
 
         <link rel="stylesheet" type="text/css" href="static/page.css" />
 
-        <script src="static/timeline.js"></script>
-        <script src="static/code/descriptions.js"></script>
+        <script src="static/code/timeline.js"></script>
+        <script src="static/code/resources.js"></script>
+        <script src="static/code/organizations.js"></script>
+        <script src="static/code/institutions.js"></script>
+        <script src="static/code/page.js"></script>
     </head>
-    <body onload="loadDescriptions()">
+    <body onload="onPageLoaded()">
         <div id="container">
             <div id="timeline-column" class="column">
                 <div class="button-container">
@@ -18,9 +21,6 @@
                 <div id="timeline"></div>
             </div>
             <div id="descriptions-column" class="column">
-                <div class="button-container">
-                    <div class="button" onclick="">Add Descriptions</div>
-                </div>
                 <div id="descriptions">
                     <h2>Positions</h2>
                     <ul id="professional"></ul>
