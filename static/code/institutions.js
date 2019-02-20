@@ -8,27 +8,12 @@ function institutionId(institution)
 
 function institutionEntry(institution)
 {
-    var entry = document.createElement("li");
-    entry.className = "institution-entry";
+    var articleElement = document.createElement("article");
 
-    // H3: Institution Name (if website is available, create a link to it).
-    var heading = document.createElement("h3");
-    var headingTextNode = document.createTextNode(institution.name);
-    if (institution.website)
-    {
-        var anchor = document.createElement("a");
-        anchor.href = institution.website;
-        anchor.appendChild(headingTextNode);
-        heading.appendChild(anchor);
-    }
-    else
-    {
-        heading.appendChild(headingTextNode);
-    }
-    
-    entry.appendChild(heading);
+    articleElement.appendChild(articulatedTitle(institution.name, institution.website));
+    articleElement.appendChild(articulatedTitleExtra(institution.location));
 
-    return entry;
+    return articleElement;
 }
 
 function addInstitution(institution)
@@ -39,7 +24,7 @@ function addInstitution(institution)
 
     if (!listItem)
     {
-        var institutionsList = document.getElementById("academic");
+        var institutionsList = document.getElementById("educations");
 
         institutionsList.appendChild(institutionEntry(institution));
     }

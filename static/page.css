@@ -3,7 +3,7 @@ body
     display: flex;
     align-items: stretch;
     margin: 0px;
-    background-color: lightgray;
+    font-family: serif;
 }
 
 #container
@@ -11,7 +11,7 @@ body
     display: flex;
     width: 100%;
     height: 100%;
-    padding: 0.5em;
+    padding: 2em;
 }
 
 .column
@@ -22,19 +22,16 @@ body
 #timeline-column
 {
     width: 20%;
-    background-color: red;
 }
 
 #descriptions-column
 {
     width: 60%;
-    background-color: green;
 }
 
 #tags-column
 {
     width: 20%;
-    background-color: blue;
 }
 
 .button-container
@@ -46,9 +43,9 @@ body
 
 .button
 {
-    background-color: black;
+    background-color: #000000;
     opacity: 0.25;
-    color: white;
+    color: #ffffff;
     height: 2em;
     line-height: 2em;
     width: 16em;
@@ -80,19 +77,19 @@ table, td
 .calendar-year
 {
     font-size: 1.5em;
-    color: white;
-    background-color: black;
+    color: #ffffff;
+    background-color: #000000;
     text-align: center;
 }
 
 .calendar-year-odd
 {
-    background-color: gray;
+    background-color: #7f7f7f;
 }
 
 .calendar-month
 {
-    color: black;
-    background-color: white;
+    color: #000000;
+    background-color: #ffffff;
     padding: 4px;                
 }

@@ -8,27 +8,12 @@ function organizationId(organization)
 
 function organizationEntry(organization)
 {
-    var entry = document.createElement("li");
-    entry.className = "organization-entry";
+    var articleElement = document.createElement("article");
 
-    // H3: Organization Name (if website is available, create a link to it).
-    var heading = document.createElement("h3");
-    var headingTextNode = document.createTextNode(organization.name);
-    if (organization.website)
-    {
-        var anchor = document.createElement("a");
-        anchor.href = organization.website;
-        anchor.appendChild(headingTextNode);
-        heading.appendChild(anchor);
-    }
-    else
-    {
-        heading.appendChild(headingTextNode);
-    }
-    
-    entry.appendChild(heading);
+    articleElement.appendChild(articulatedTitle(organization.name, organization.website));
+    articleElement.appendChild(articulatedTitleExtra(organization.location));
 
-    return entry;
+    return articleElement;
 }
 
 function addOrganization(organization)
@@ -39,7 +24,7 @@ function addOrganization(organization)
 
     if (!listItem)
     {
-        var organizationsList = document.getElementById("professional");
+        var organizationsList = document.getElementById("experiences");
 
         organizationsList.appendChild(organizationEntry(organization));
     }

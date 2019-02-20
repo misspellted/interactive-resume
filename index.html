@@ -2,12 +2,17 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        
         <title>Interactive Resume</title>
 
         <link rel="stylesheet" type="text/css" href="static/page.css" />
+        <link rel="stylesheet" type="text/css" href="static/arty/article.css" />
 
         <script src="static/code/timeline.js"></script>
         <script src="static/code/resources.js"></script>
+
+        <script src="static/code/articulated.js"></script>
+
         <script src="static/code/organizations.js"></script>
         <script src="static/code/institutions.js"></script>
         <script src="static/code/page.js"></script>
@@ -22,17 +27,40 @@
             </div>
             <div id="descriptions-column" class="column">
                 <div id="descriptions">
-                    <h2>Positions</h2>
-                    <ul id="professional"></ul>
-                    <h2>Studies</h2>
-                    <ul id="academic"></ul>
+                    <section id="experiences">
+                        <h2>Experience</h2>
+                    </section>
+                    <section id="educations">
+                        <h2>Education</h2>
+                    </section>
                 </div>
             </div>
             <div id="tags-column" class="column">
                 <div class="button-container">
                     <div class="button" onclick="">Add Tags</div>
                 </div>
-                <div id="tags"></div>
+                <div id="tags">
+                    <section>
+                        <h2>Languages</h2>
+                        <ul id="languages"></ul>
+                    </section>
+                    <section>
+                        <h2>Frameworks</h2>
+                        <ul id="frameworks"></ul>
+                    </section>
+                    <section>
+                        <h2>Tools</h2>
+                        <ul id="tools"></ul>
+                    </section>
+                    <section>
+                        <h2>Platforms</h2>
+                        <ul id="platforms"></ul>
+                    </section>
+                    <section>
+                        <h2>Methodologies</h2>
+                        <ul id="methodologies"></ul>
+                    </section>
+                </div>
             </div>
         </div>
     </body>

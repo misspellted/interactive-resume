@@ -1,0 +1,36 @@
+section h2
+{
+    text-transform: uppercase;
+    color: #2079c7;
+    font-size: 1em;
+    font-family: sans-serif;
+}
+
+article
+{
+    display: block;
+    padding: 0.5em 0em;
+}
+
+.article-title
+{
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.article-title a
+{
+    color: #000000;
+    text-decoration: none;
+}
+
+.article-title a:hover
+{
+    color: #c77920;
+}
+
+.article-title-extra
+{
+    padding-left: 0.5em;
+    font-style: oblique;
+}
