@@ -1,5 +1,5 @@
 function onPageLoaded()
 {
-    getJson("static/data/organizations.json", processOrganizations);
+    loadExperience();
     loadEducations();
 }

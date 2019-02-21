@@ -1,9 +1,19 @@
 function educationArticleId(educationEntry)
 {
-    // TODO: Generate an identifier for the education entry.
+    var articleId;
 
-    // For now, just use the name property.
-    return educationEntry.institution;
+    with (educationEntry)
+    {
+        if (type == "major" || type == "minor")
+        {
+            articleId = level + " in " + field + " at " + institution;
+        }
+        else
+        {
+            articleId = institution;
+        }
+    }
+    return articleId;
 }
 
 function primaryEducationArticleTitle(educationEntry)
@@ -40,14 +50,6 @@ function educationArticle(educationEntry)
     article.appendChild(primaryEducationArticleTitle(educationEntry));
     article.appendChild(secondaryEducationArticleTitle(educationEntry));
 
-    if (educationEntry.type)
-    {
-        if (educationEntry.type == "minor")
-        {
-            applyStyle(article, "minor-degree");
-        }
-    }
-
     return article;
 }
 
@@ -55,13 +57,16 @@ function addEducation(educationEntry)
 {
     var identifier = educationArticleId(educationEntry);
 
-    var listItem = document.getElementById(identifier);
+    var educationArticleEntry = document.getElementById(identifier);
 
-    if (!listItem)
+    if (!educationArticleEntry)
     {
-        var institutionsList = document.getElementById("educations");
+        var educations = document.getElementById("educations");
 
-        institutionsList.appendChild(educationArticle(educationEntry));
+        educationArticleEntry = educationArticle(educationEntry);
+        setId(educationArticleEntry, identifier);
+
+        educations.appendChild(educationArticleEntry);
     }
 }
 
