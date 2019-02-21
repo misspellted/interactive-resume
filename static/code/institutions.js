@@ -6,14 +6,30 @@ function institutionId(institution)
     return institution.name;
 }
 
+function primaryEducationTitle(institution)
+{
+    with (institution)
+    {
+        return primaryTitle(name, website, null, null, location, null);
+    }
+}
+
+function secondaryEducationTitle(institution)
+{
+    with (institution)
+    {
+        return secondaryTitle(name, website, null, null, location, null);
+    }
+}
+
 function institutionEntry(institution)
 {
-    var articleElement = document.createElement("article");
+    var article = articleNode();
 
-    articleElement.appendChild(articulatedTitle(institution.name, institution.website));
-    articleElement.appendChild(articulatedTitleExtra(institution.location));
+    article.appendChild(primaryEducationTitle(institution));
+    article.appendChild(secondaryEducationTitle(institution));
 
-    return articleElement;
+    return article;
 }
 
 function addInstitution(institution)

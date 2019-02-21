@@ -1,68 +1,36 @@
-function emptySpanHtml(className, id)
+function titleSpan(title, link, className)
 {
-    var element = document.createElement("span");
-
-    if (className)
-    {
-        element.className = className;
-    }
-
-    if (id)
-    {
-        element.id = id;
-    }
-
-    return element;
+    return spanNode(link ? aNode(link, textNode(title)) : textNode(title), className);
 }
 
-function anchorHtml(url, contents, className, id)
+function primaryTitle(leftText, leftLink, centerText, centerLink, rightText, rightLink)
 {
-    var element = document.createElement("a");
+    var primaryTitleDiv = divNode(null, "title-row");
 
-    if (className)
-    {
-        element.className = className;
-    }
+    primaryTitleDiv.appendChild(titleSpan(leftText, leftLink, "primary-title-left"));
+    primaryTitleDiv.appendChild(titleSpan(centerText, centerLink, "primary-title-center"));
+    primaryTitleDiv.appendChild(titleSpan(rightText, rightLink, "primary-title-right"));
 
-    if (id)
-    {
-        element.id = id;
-    }
-
-    element.href = url;
-
-    element.appendChild(document.createTextNode(contents));
-
-    return element;
+    return primaryTitleDiv;
 }
 
-function spanHtml(contents, className, id)
+function secondaryTitle(leftText, leftLink, centerText, centerLink, rightText, rightLink)
 {
-    var element = emptySpanHtml(className, id);
+    var secondaryTitleDiv = divNode(null, "title-row");
 
-    element.appendChild(document.createTextNode(contents));
+    secondaryTitleDiv.appendChild(titleSpan(leftText, leftLink, "secondary-title-left"));
+    secondaryTitleDiv.appendChild(titleSpan(centerText, centerLink, "secondary-title-center"));
+    secondaryTitleDiv.appendChild(titleSpan(rightText, rightLink, "secondary-title-right"));
 
-    return element;
+    return secondaryTitleDiv;
 }
 
 function articulatedTitle(title, link)
 {
-    var element;
-
-    if (link)
-    {
-        element = emptySpanHtml("article-title");
-        element.appendChild(anchorHtml(link, title));
-    }
-    else
-    {
-        element = spanHtml(title, "article-title");
-    }
-
-    return element;
+    return titleSpan(title, link, "article-title");
 }
 
 function articulatedTitleExtra(titleExtra)
 {
-    return spanHtml(titleExtra, "article-title-extra");
+    return titleSpan(titleExtra, null, "article-title-extra");
 }

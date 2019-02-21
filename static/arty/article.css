@@ -8,29 +8,52 @@ section h2
 
 article
 {
-    display: block;
-    padding: 0.5em 0em;
+    padding: 0.5em 2em;
 }
 
-.article-title
-{
-    font-size: 1.25em;
-    font-weight: bold;
-}
-
-.article-title a
+article a
 {
     color: #000000;
     text-decoration: none;
 }
 
-.article-title a:hover
+article a:hover
 {
     color: #c77920;
 }
 
-.article-title-extra
+article div.title
 {
-    padding-left: 0.5em;
-    font-style: oblique;
+    background-color: #ff0000;
+}
+
+article div.title-row
+{
+    display: flex;
+    align-items: center;
+    height: 2em;
+}
+
+article div.title-row:last-child
+{
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.primary-title-left
+{
+    font-size: 1.25em;
+    width: 40%;
+}
+
+.primary-title-center
+{
+    font-size: 1em;
+    margin: auto;
+}
+
+.primary-title-right
+{
+    font-size: 1em;
+    width: 20%;
+    text-align: right;
 }
