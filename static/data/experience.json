@@ -1,0 +1,38 @@
+[
+    {
+        "type": "full",
+        "title": "Build and Release Engineer",
+        "organization": "ARCA",
+        "location": "Mebane, NC",
+        "website": "https://www.arca.com",
+        "startDate": "February 2016",
+        "endDate": "December 2018"
+    },
+    {
+        "type": "full",
+        "title": "Software Engineer",
+        "organization": "ARCA",
+        "location": "Mebane, NC",
+        "website": "https://www.arca.com",
+        "startDate": "March 2015",
+        "endDate": "December 2018"
+    },
+    {
+        "type": "full",
+        "title": "Software Engineer in Test",
+        "organization": "ARCA",
+        "location": "Mebane, NC",
+        "website": "https://www.arca.com",
+        "startDate": "November 2013",
+        "endDate": "March 2015"
+    },
+    {
+        "type": "contract",
+        "title": "Junior Quality Assurance Automation Engineer",
+        "organization": "Sensus",
+        "location": "Morrisville, NC",
+        "website": "https://www.sensus.com",
+        "startDate": "July 2012",
+        "endDate": "November 2013"
+    }
+]

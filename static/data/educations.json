@@ -1,0 +1,33 @@
+[
+    {
+        "type": "major",
+        "level": "Bachelor's of Science",
+        "field": "Computer Science",
+        "institution": "College of Charleston",
+        "location": "Charleston, SC",
+        "website": "https://www.cofc.edu/",
+        "startDate": "August 2008",
+        "endDate": "May 2012"
+    },
+    {
+        "type": "minor",
+        "level": "Bachelor's of Science",
+        "field": "Geology",
+        "institution": "College of Charleston",
+        "location": "Charleston, SC",
+        "website": "https://www.cofc.edu/",
+        "startDate": "May 2010",
+        "endDate": "May 2012"
+    },
+    {
+        "type": "major",
+        "level": "Applied Associate's of Science",
+        "field": "Computer Technology",
+        "institution": "Trident Technical College",
+        "location": "North Charleston, SC",
+        "website": "https://www.tridenttech.edu/",
+        "startDate": "August 2006",
+        "endDate": "May 2008",
+        "result": "Transferred"
+    }
+]

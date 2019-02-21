@@ -1,0 +1,5 @@
+function onPageLoaded()
+{
+    loadExperience();
+    loadEducations();
+}

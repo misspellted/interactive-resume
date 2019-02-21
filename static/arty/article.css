@@ -1,0 +1,70 @@
+section h2
+{
+    text-transform: uppercase;
+    color: #2079c7;
+    font-size: 1em;
+    font-family: sans-serif;
+}
+
+article
+{
+    padding: 1em 2em 1em 0em;
+}
+
+article a
+{
+    color: #000000;
+    text-decoration: none;
+}
+
+article a:hover
+{
+    color: #c77920;
+}
+
+article div.title
+{
+    background-color: #ff0000;
+}
+
+article div.title-row
+{
+    display: flex;
+    align-items: center;
+    height: 2em;
+}
+
+article div.title-row:last-child
+{
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.primary-title-left, .secondary-title-left
+{
+    font-size: 1.25em;
+    width: 45%;
+}
+
+.secondary-title-left
+{
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+.primary-title-center, .secondary-title-center
+{
+    font-size: 1em;
+    margin: auto;
+}
+
+.primary-title-right, .secondary-title-right
+{
+    font-size: 1.25em;
+    width: 30%;
+    text-align: right;
+}
+
+.secondary-title-right
+{
+    font-size: 1em;
+}
