@@ -1,0 +1,30 @@
+[
+    {
+        "group": "Languages",
+        "value": "Java"
+    },
+    {
+        "group": "Languages",
+        "value": "Python"
+    },
+    {
+        "group": "Frameworks",
+        "value": "JavaFX"
+    },
+    {
+        "group": "Tools",
+        "value": "IntelliJ IDEA"
+    },
+    {
+        "group": "Platforms",
+        "value": "Ubuntu"
+    },
+    {
+        "group": "Platforms",
+        "value": "Windows"
+    },
+    {
+        "group": "Processes",
+        "value": "Agile"
+    }
+]

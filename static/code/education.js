@@ -13,6 +13,7 @@ function educationArticleId(educationEntry)
             articleId = institution;
         }
     }
+
     return articleId;
 }
 
@@ -30,7 +31,7 @@ function primaryEducationArticleTitle(educationEntry)
         {
             leftText += " (" + result.toLowerCase() + ")";
         }
-        
+
         return primaryTitle(leftText, null, level, null, institution, website);
     }
 }

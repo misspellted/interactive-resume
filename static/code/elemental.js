@@ -68,3 +68,23 @@ function articleNode(contentsNode, className, id)
 {
     return elementNode("article", id, className, contentsNode);
 }
+
+function sectionNode(contentsNode, className, id)
+{
+    return elementNode("section", id, className, contentsNode);
+}
+
+function h2Node(contentsNode, className, id)
+{
+    return elementNode("h2", id, className, contentsNode);
+}
+
+function unorderedListNode(contentsNode, className, id)
+{
+    return elementNode("ul", id, className, contentsNode);
+}
+
+function listItemNode(contentsNode, className, id)
+{
+    return elementNode("li", id, className, contentsNode);
+}
