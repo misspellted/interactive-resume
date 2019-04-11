@@ -6,7 +6,7 @@ function experienceArticleId(experienceEntry)
     {
         articleId = title + " at " + organization;
     }
-    
+
     return articleId;
 }
 
@@ -20,7 +20,7 @@ function primaryExperienceArticleTitle(experienceEntry)
         {
             leftText += " (" + type + ")";
         }
-        
+
         return primaryTitle(leftText, null, null, null, organization, website);
     }
 }
